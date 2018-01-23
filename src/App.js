@@ -33,7 +33,7 @@ class ValidationForm extends React.Component {
 
     switch (name) {
       case 'name':
-        if (/^[a-zA-Z\s\-]*$/.test(value) && value.length >= 8){
+        if (/^[a-zA-Z\s-]*$/.test(value) && value.length >= 8){
           this.setState({nameError: ''});
           this.setState({nameValidated: true})
         } else {
@@ -50,6 +50,9 @@ class ValidationForm extends React.Component {
           this.setState({emailError: 'Must be a valid email address.'});
           this.setState({emailValidated: false})
         }
+        break;
+      default:
+        console.log("An error occurred on validation.");
         break;
     }
   }
