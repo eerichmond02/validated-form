@@ -25,6 +25,7 @@ class ValidationForm extends React.Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     this.setState({status: 'Thanks!'})
   }
 
